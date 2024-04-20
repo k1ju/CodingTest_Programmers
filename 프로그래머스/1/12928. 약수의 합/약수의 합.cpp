@@ -1,6 +1,6 @@
 #include <string>
 #include <vector>
-
+#include <iostream>
 using namespace std;
 
 int solution(int n) {
@@ -18,3 +18,14 @@ int solution(int n) {
     int answer = sum;
     return answer;
 }
+
+int main()
+{
+    int testCase = 12;
+    int testAnswer = solution(testCase);
+
+    cout << testAnswer;
+    return 0;
+}
+
+
