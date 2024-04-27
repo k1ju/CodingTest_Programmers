@@ -6,10 +6,11 @@ using namespace std;
 bool solution(string s) {
     bool answer = false;
     bool isLength =false;
-    bool isNum = false;
+    bool isNum = true;
     
-    if(all_of(s.begin(), s.end(), ::isdigit)){
-        isNum = true;
+    for( int i=0; i<s.length(); i++  ){
+        if(!isdigit(s[i]))
+        isNum = false;
     }
     
     if(s.length()==4 || s.length()==6 ){
