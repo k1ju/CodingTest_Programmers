@@ -4,6 +4,10 @@
 using namespace std;
 
 string solution(int num) {
-
-    return num & 1 ? "Odd" : "Even";
+    string answer = "Odd";
+    if(num%2 == 0){
+        answer = "Even";
+    }
+    
+    return answer;
 }
