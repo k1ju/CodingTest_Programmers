@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -8,13 +9,10 @@ vector<string> solution(vector<string> strArr) {
     
     for(int i=0; i<strArr.size(); i++){
         if(i%2==1){  // 홀수면
-            for(int j=0; j<strArr[i].length(); j++){
-                strArr[i][j] = toupper(strArr[i][j]);
-            }
+            transform(strArr[i].begin(), strArr[i].end(), strArr[i].begin(), ::toupper);
+            
         } else {
-            for(int j=0; j<strArr[i].length(); j++){
-                strArr[i][j] = tolower(strArr[i][j]);
-            }
+            transform(strArr[i].begin(), strArr[i].end(), strArr[i].begin(), ::tolower);
             
         }
     }
