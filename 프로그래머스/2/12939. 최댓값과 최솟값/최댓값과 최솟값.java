@@ -2,23 +2,26 @@ import java.util.*;
 
 class Solution {
     public String solution(String s) {
-        String answer = "";
-        String[] array = s.split(" ");
         
+        String[] arr = s.split(" ");
         PriorityQueue<Integer> pq = new PriorityQueue<>();
         
-        for(int i=0; i<array.length; i++){
-            pq.add(Integer.parseInt(array[i]));
+        for(int i=0; i<arr.length; i++){
+            pq.add(Integer.parseInt(String.valueOf(arr[i])));
+            
         }
+
         int min = pq.peek();
-        int max = 0;
-        
-        while(!pq.isEmpty()){
+        int max = Integer.MAX_VALUE;
+        while( !pq.isEmpty() ){
             max = pq.poll();
         }
         
-        answer += min + " " + max;
+        String answer = "";
         
-        return answer;
+        return min + " " + max;
+        
+        
+        
     }
 }
