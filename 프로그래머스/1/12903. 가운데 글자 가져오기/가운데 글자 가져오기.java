@@ -7,7 +7,7 @@ class Solution {
         if(s.length() % 2 == 0){
             sb.append(s.substring(s.length()/2-1, s.length() / 2 + 1 ));   
         } else{
-            sb.append(s.substring(s.length()/2, s.length() / 2 + 1)); 
+            sb.append(s.charAt(s.length() / 2 )); 
         }
     
         
