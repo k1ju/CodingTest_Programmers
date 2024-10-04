@@ -3,24 +3,25 @@ import java.util.*;
 class Solution {
     public String solution(String s) {
         
+        StringBuilder sb = new StringBuilder();
+        
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        
         String[] arr = s.split(" ");
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
         
         for(int i=0; i<arr.length; i++){
-            pq.add(Integer.parseInt(String.valueOf(arr[i])));
+            if(Integer.parseInt(arr[i]) < min){
+                min = Integer.parseInt(arr[i]);
+            }
+            
+            if(Integer.parseInt(arr[i]) > max){
+                max = Integer.parseInt(arr[i]);
+            }
             
         }
-
-        int min = pq.peek();
-        int max = Integer.MAX_VALUE;
-        while( !pq.isEmpty() ){
-            max = pq.poll();
-        }
-        
-        String answer = "";
-        
-        return min + " " + max;
-        
+        sb.append(min).append(" ").append(max);
+        return sb.toString();
         
         
     }
