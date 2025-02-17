@@ -6,25 +6,23 @@ function solution(n) {
     // for(let i=0; i<n/2+1; i++){
     //     list.push(i);
     // }
-    var lt=1,rt=2;
-    while(lt<rt && rt<n/2+1){
-        
-        var num =0;
-        
-        for(let i=lt; i<=rt; i++){
-            num+=i;
-        }
-        
-        if(num<n)  rt++;
-        else if(num==n) {
-            answer++;
+    var lt=1,rt=1;
+    var sum = 1;
+    
+    while(rt<=n){
+                      
+        if(sum<n){  
+            rt++;
+            sum+=rt;
+        } else if(sum===n) {
+            answer+=1;
+            sum-=lt;
             lt++;
         } else{
+            sum-=lt;
             lt++;
         }
-        
     }
-    answer+=1;
     
     return answer;
 }
